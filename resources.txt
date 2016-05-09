@@ -1,0 +1,3 @@
+https://www.raspberrypi.org/forums/viewtopic.php?t=45235 (Motiondetect mit Python)
+http://mindmeat.blogspot.ch/2013/03/php-image-comparison-motion-detection.html (Motiondetect mit PHP (Anhand von Bildern))
+https://pimylifeup.com/raspberry-pi-webcam-server/ (Webcam Server mit motion)
