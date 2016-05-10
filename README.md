@@ -11,4 +11,8 @@ Backend for [Module 152](http://m152.iet-gibb.ch/diverses/ml152-fs_2016.pdf) Ras
 
 ## Installation
 
+1. Download [install.sh](install.sh)
+2. Run the installation script `sudo install.sh`
+3. Follow the instructions
+
 ## Configuration
