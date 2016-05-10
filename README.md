@@ -1,18 +1,37 @@
 [![Stories in Ready](https://badge.waffle.io/GIBM-13/m152-pi-cam-backend.png?label=ready&title=Ready)](https://waffle.io/GIBM-13/m152-pi-cam-backend) [![Join the chat at https://gitter.im/GIBM-13/m152-pi-cam-backend](https://badges.gitter.im/GIBM-13/m152-pi-cam-backend.svg)](https://gitter.im/GIBM-13/m152-pi-cam-backend?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 # Raspberry Pi Cam backend
-
 Backend for [Module 152](http://m152.iet-gibb.ch/diverses/ml152-fs_2016.pdf) Raspberry Pi Security Cam project.
 
 ## Requirements
 * Raspberry Pi B 1, 2 or 3
 * Original HD-Camera for Raspberry Pi
-* Installed and configured the Original HD-Camera
 
 ## Installation
+Run the following comands and follow the instructions below:
+```
+cd /tmp
+wget https://raw.githubusercontent.com/GIBM-13/m152-pi-cam-backend/master/install.sh
+chmod +x install.sh
+./install.sh
+```
 
-1. Download [install.sh](install.sh)
-2. Run the installation script `sudo install.sh`
-3. Follow the instructions
+1. Select `no` _(we are using bash instead of dash)_
+2. Activate the camera & do the some general raspberry pi configuration (set locale / set timezone / ..)
+3. __DO NOT reboot__ it will reboot after the script is finished
 
-## Configuration
+## How to
+
+### Start / stop motion
+Start motion: `sh /home/pi/start_motion.sh`
+
+Stop motion: `sh /home/pi/stop_motion.sh`
+
+### motion image dir
+motion saves images on motiondetect in: `/home/pi/www/media`
+
+### Webcam stream
+The Webcam stream runs on port: __8081__
+
+### Webserver
+The web document root is located under: `/home/pi/www`
