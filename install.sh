@@ -115,4 +115,3 @@ sleep 5; #Sleep von 5 Sekunden, damit der Nutzer die Informationen lesen kann
 
 sudo shutdown -r now
 exit;
-
