@@ -36,7 +36,7 @@ echo -e "\e[32m  benötigtige Komponenten";
 echo -e "\e[32m    werden Installiert";
 echo -e "\e[32m----------------------------\e[0m";
 
-sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y && sudo apt-get install vim-nox nano git curl -y;
+sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y && sudo apt-get install vim-nox nano git curl -y && sudo apt-get autoremove -y && apt-get moo;
 
 echo "";
 echo -e "\e[32m---------------------------";
@@ -60,7 +60,25 @@ echo -e "\e[32m----------------";
 echo -e "\e[32mInstalliere UV4L";
 echo -e "\e[32m----------------\e[0m";
 
-sudo apt-get install uv4l uv4l-raspicam uv4l-raspicam-extras -y;
+sudo apt-get install uv4l -y;
+sudo apt get install uv4l-raspicam -y;
+sudo apt-get install uv4l-raspicam-extras -y;
+sudo apt-get install uv4l-server -y;
+sudo apt-get install uv4l-uvc -y;
+sudo apt-get install uv4l-xscreen -y;
+sudo apt-get install uv4l-mjpegstream -y;
+
+echo "";
+echo -e "\e[32m------------------";
+echo -e "\e[32mInstalliere ffmpeg";
+echo -e "\e[32m------------------\e[0m";
+
+#cd /tmp;
+#wget https://github.com/ccrisan/motioneye/wiki/precompiled/ffmpeg_2.8.3.git325b593-1_armhf.deb;
+#sudo dpkg -i ffmpeg_2.8.3.git325b593-1_armhf.deb;
+#sudo apt-get remove libavcodec-extra-56 libavformat56 libavresample2 libavutil54 -y && sudo apt-get install libavutil54 libavformat56 libswscale3 -y;
+
+sudo apt-get install -t stretch ffmpeg libavdevice-ffmpeg56 libavfilter-ffmpeg5 libavformat-ffmpeg56 libgnutls30
 
 echo "";
 echo -e "\e[32m------------------";
@@ -68,6 +86,10 @@ echo -e "\e[32mInstalliere motion";
 echo -e "\e[32m------------------\e[0m";
 
 sudo apt-get install motion -y;
+
+cd /tmp;
+sudo wget https://github.com/ccrisan/motioneye/wiki/precompiled/motion-mrdave-raspbian -O /usr/local/bin/motion;
+sudo chmod +x /usr/local/bin/motion;
 
 echo "";
 echo -e "\e[32m----------------------";
@@ -86,9 +108,9 @@ sudo rm default;
 sudo ln -s ../sites-available/pi-cam;
 
 echo "";
-echo -e "\e[32m-----------------------";
-echo -e "\e[32mNGINX wird konfiguriert";
-echo -e "\e[32m-----------------------\e[0m";
+echo -e "\e[32m-------------------------";
+echo -e "\e[32mUV4L treiber wird geladen";
+echo -e "\e[32m-------------------------\e[0m";
 
 uv4l --driver raspicam --auto-video_nr;
 
@@ -105,6 +127,8 @@ echo "";
 echo -e "\e[32m--------------------------";
 echo -e "\e[32mInstallation abgeschlossen";
 echo -e "\e[32m--------------------------\e[0m";
+
+# sudo apt-get install -t stretch ffmpeg libavdevice-ffmpeg56 libavfilter-ffmpeg5 libavformat-ffmpeg56 libopencv-core2.4v5 libopencv-imgproc2.4v5 libgnutls30
 
 echo "";
 echo -e "\e[32m----------------------------";
