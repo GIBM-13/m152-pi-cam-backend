@@ -34,7 +34,43 @@ echo -e "\e[32m----------------------------";
 echo -e "\e[32m  Netwerk Proxy einrichten";
 echo -e "\e[32m----------------------------\e[0m";
 
-sleep 2;
+echo "Proxy (yes/no)";
+read proxy;
+
+if [ "$proxy" = "yes" ]
+then
+        echo "Adresse:";
+        read adress;
+
+        echo "Port:":
+        read port;
+
+        echo "Username:";
+        read user;
+
+        echo "Passwort:";
+        read -s pass;
+
+        use_proxy=$proxy;
+        http_proxy="http://$user:$pass@$adress:$port";
+        https_proxy="https://$user:$pass@$adress:$port";
+
+        export use_proxy;
+        export http_proxy;
+        export https_proxy;
+
+        sudo echo "-------------------------------------" | sudo tee --append /etc/env$
+        sudo echo "#Proxy" | sudo tee --append /etc/environment;
+        sudo echo "-------------------------------------" | sudo tee --append /etc/env$
+        sudo echo "use_proxy=\"$proxy\";" | sudo tee --append /etc/environment;
+        sudo echo "http_proxy=\"http://$user:$pass@$adress:$port\";" | sudo tee --appe$
+        sudo echo "https_proxy=\"https://$user:$pass@$adress:$port\";" | sudo tee --ap$
+
+        sudo echo "export use_proxy;" | sudo tee --append /etc/environment;
+        sudo echo "export http_proxy;" | sudo tee --append /etc/environment;
+        sudo echo "export https_proxy;" | sudo tee --append /etc/environment;
+fi
+
 
 echo "";
 echo -e "\e[32m----------------------------";
