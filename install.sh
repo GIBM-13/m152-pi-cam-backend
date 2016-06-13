@@ -59,12 +59,12 @@ then
         export http_proxy;
         export https_proxy;
 
-        sudo echo "-------------------------------------" | sudo tee --append /etc/env$
+        sudo echo "-------------------------------------" | sudo tee --append /etc/environment;
         sudo echo "#Proxy" | sudo tee --append /etc/environment;
-        sudo echo "-------------------------------------" | sudo tee --append /etc/env$
+        sudo echo "-------------------------------------" | sudo tee --append /etc/environment;
         sudo echo "use_proxy=\"$proxy\";" | sudo tee --append /etc/environment;
-        sudo echo "http_proxy=\"http://$user:$pass@$adress:$port\";" | sudo tee --appe$
-        sudo echo "https_proxy=\"https://$user:$pass@$adress:$port\";" | sudo tee --ap$
+        sudo echo "http_proxy=\"http://$user:$pass@$adress:$port\";" | sudo tee --append /etc/environment;
+        sudo echo "https_proxy=\"https://$user:$pass@$adress:$port\";" | sudo tee --append /etc/environment;
 
         sudo echo "export use_proxy;" | sudo tee --append /etc/environment;
         sudo echo "export http_proxy;" | sudo tee --append /etc/environment;
