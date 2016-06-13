@@ -37,6 +37,10 @@ echo -e "\e[32m----------------------------\e[0m";
 echo "Proxy (yes/no)";
 read proxy;
 
+if [ "$proxy" = "y" ]
+then
+        proxy = "yes";
+fi
 if [ "$proxy" = "yes" ]
 then
         echo "Adresse:";
