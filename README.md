@@ -15,9 +15,7 @@ wget https://raw.githubusercontent.com/GIBM-13/m152-pi-cam-backend/master/instal
 chmod +x install.sh
 ./install.sh
 ```
-
 or 
-
 ```
 cd /tmp
 wget https://raw.githubusercontent.com/GIBM-13/m152-pi-cam-backend/master/install.sh -e use_proxy=yes -e https_proxy=https://[username]:[password]@[IP]:[port]
@@ -32,16 +30,18 @@ chmod +x install.sh
 
 ## How to
 
-### Start / stop motion
-Start motion: `sh /home/pi/start_motion.sh`
+### Start / stop scripts
+Start motion: `sh /home/pi/motion.sh`
 
-Stop motion: `sh /home/pi/stop_motion.sh`
+Start stream: `sh /home/pi/stream.sh`
 
-### motion image dir
+Stop all: `sh /home/pi/stop.sh`
+
+### motion image/video dir
 motion saves images on motiondetect in: `/home/pi/www/media`
 
 ### Webcam stream
-The Webcam stream runs on port: __8081__
+The Webcam stream runs on port: __8554__
 
 ### Webserver
 The web document root is located under: `/home/pi/www`
